@@ -1,0 +1,59 @@
+.dropdown table.datagrid{
+	float:left;
+	width:100%;
+}
+
+.dropdown table.datagrid, .dropdown table.datagrid th, .dropdown table.datagrid  td{
+    border: 1px solid #dfdfdf;
+    border-collapse: collapse;
+}
+
+.dropdown table.datagrid th{
+	background-color: #fafafa;
+}
+
+.dropdown table.datagrid th, .dropdown table.datagrid td {
+  padding: 5px;
+}
+
+.dropdown table.datagrid th {
+    font-size: 14px;
+    font-weight: bold;
+    color: #404040;
+    height: 20px;
+    line-height: 20px;
+	text-align:left;
+}
+
+.dropdown table.datagrid td.cntr,.dropdown table.datagrid th.cntr{
+	text-align:center !important;
+}
+
+.dropdown-content table.datagrid tr.selected{
+    background-color: #0092DC;
+}
+
+.dropdown-content table.datagrid tr.selected td{
+    color: #fff;
+}
+  
+.dropdown-content table.datagrid tr:hover{
+    background-color: #f1f1f1;	
+} 
+
+.dropdown-content table.datagrid tr:hover td{
+   color:#333;
+}
+
+.dropdown table.datagrid td.cntr a, .dropdown table.datagrid th.cntr a{
+	color:#333;
+	font-size:14px;
+}
+
+.dropdown table.datagrid td {
+    font-size: 14px;
+    color: #404040;
+    height: 20px;
+    line-height: 20px;
+	text-align:left;
+}

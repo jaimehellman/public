@@ -1,0 +1,14 @@
+.pagination .page-item {cursor:pointer;}
+
+.page-link{
+  color: #007bff !important;
+  background-color: #fff;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d !important;
+}
+
+.page-item.active .page-link {
+  color: #fff !important;
+}

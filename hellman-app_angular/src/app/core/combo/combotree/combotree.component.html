@@ -1,0 +1,20 @@
+<div class="dropdown">
+    <input type="text" class="form-control combo-text" autocomplete="off" value="{{text}}" (keyup)="toggle($event)">
+    <input type="hidden" 
+      class="combo-value" 
+      [id]="id" 
+      [name]="name" 
+      [value]="value?value:''" >
+    <span (click)="toggle($event)"  class="text-addon"></span>
+    <div (mouseleave)="out($event)" class="dropdown-content">
+        <Tree 
+            [checkbox]="checkbox"
+            [multiple]="multiple"
+            [value]="value?value:''"
+            (change) = "select($event)"
+            (cleanTree) = "clean($event)"
+            (changeMultiple) = "selectMultiple($event)"
+            [data]="data">
+         </Tree>
+    </div>
+</div>

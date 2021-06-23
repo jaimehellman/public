@@ -1,0 +1,8 @@
+  
+{
+    "watch": ["src"],
+    "execMap": {
+      "ts": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notif src/Server.ts"
+    },
+    "ext": "ts"
+  }

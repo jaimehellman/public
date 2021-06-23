@@ -1,0 +1,42 @@
+[
+    {
+        "sequencial": 1,
+        "nomeGrupoEtapa": "Etapa planejamento",
+        "descricaoGrupoEtapa": "Etapa de  planejamento do projeto"
+    },
+    {
+        "sequencial": 2,
+        "nomeGrupoEtapa": "Etapa Requisitos",
+        "descricaoGrupoEtapa": "Etapa de análise requisitos do sistema"
+    },
+    {
+        "sequencial": 3,
+        "nomeGrupoEtapa": "Etapa de Prototipagem",
+        "descricaoGrupoEtapa": "Etapa de criação do protótipo"
+    },
+    {
+        "sequencial": 4,
+        "nomeGrupoEtapa": "Etapa de modelagem de banco",
+        "descricaoGrupoEtapa": "Etapa de modelagem do banco de dados"
+    },
+    {
+        "sequencial": 5,
+        "nomeGrupoEtapa": "Etapa de homologação",
+        "descricaoGrupoEtapa": "Etapa de homologação do sistema"
+    },
+    {
+        "sequencial": 6,
+        "nomeGrupoEtapa": "Etapa de desenvolvimento",
+        "descricaoGrupoEtapa": "Etapa de desenvolvimento do sistema"
+    },
+    {
+        "sequencial": 7,
+        "nomeGrupoEtapa": "Etapa de teste",
+        "descricaoGrupoEtapa": "Etapa de teste do sistema"
+    },
+    {
+        "sequencial": 8,
+        "nomeGrupoEtapa": "Etapa de qualidade",
+        "descricaoGrupoEtapa": "Etapa de teste de qualidade do sistema"
+    }
+]

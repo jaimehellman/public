@@ -1,0 +1,45 @@
+.form-control:focus {
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    border: 1px solid #ced4da;
+}
+
+.text-addon{
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    width: 35px;
+    height: calc(1.5em + 0.75rem + 2px);
+    cursor:pointer;
+    background:#f3f3f3;
+    border: 1px solid #ced4da;
+}
+
+.text-addon::before {
+    content: url('/assets/images/caret.png');
+    color: black;
+    display: inline-block;
+    padding-top:0.7em;
+    margin-left: 0.6em;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width:100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border: 1px solid #ddd;
+    z-index:9999;
+    width:100%;
+    box-sizing: border-box;
+    background:#fff;
+    overflow-y:scroll;
+    height:200px;
+}
+
+.show {display:block;}

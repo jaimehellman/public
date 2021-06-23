@@ -1,0 +1,33 @@
+<div class="dropdown">
+    <input type="text" class="form-control combo-text" value="" (keyup)="toggle($event)">
+    <input type="hidden" 
+        class="combo-value" 
+        [id]="id" 
+        [name]="name" 
+        [value]="value?value:''" >
+    <span (click)="toggle($event)"  class="text-addon"></span>
+    <div (mouseleave)="out($event)" class="dropdown-content">
+        <div class="treegrid">
+            <div class="treegrid-table">
+				<div class="treegrid-row all level-0">
+                    <div class="treegrid-cell treegrid-header w10">
+                            <input *ngIf="checkbox" type="checkbox" (change)="onCheckAll($event)" class="checkAll">
+                    </div>
+                    <div  *ngFor="let header of headers" [hidden]="header.treeField || header.key"  class="treegrid-cell treegrid-header">{{header.columnTitle}}</div>
+                </div>
+                <div  *ngFor="let dt of sortData" [attr.value]="dt[key]" [attr.rel]="dt[treeField]" [attr.text]="dt[text]" class="treegrid-row" [ngClass]="'level-'+dt['level']">
+                    <div class="treegrid-cell cell-arrow-left">
+                        <i (click)="toggleCollapse($event)" class="caret tree-arrow-right"></i> 
+                        <input *ngIf="checkbox" type="checkbox" (change)="setValue($event)" [value]="dt[key]" class="rowCheck">
+                        <span [attr.value]="dt[key]" [attr.text]="dt[text]" (click)="setValue($event)">{{dt[key]}}</span>
+                    </div>
+                    <div *ngFor="let header of headers" [hidden]="header.treeField || header.key" (click)="setValue($event)"  class="treegrid-cell cell-text w55">
+                        <span>{{ dt[header.columnName]}}</span>
+                    </div>
+                </div>
+                 
+                   
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+  
+<form #f="ngForm" >
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="ctr actions" *ngIf="settings.actionPosition == 1" scope="col"><a (click)="insertInline()"><i class="fa fa-plus"></i></a></th>
+                <th [style.textAlign]="header.align" *ngFor="let header of settings.headers" scope="col">{{header.columnTitle}}</th>
+                <th class="ctr actions" *ngIf="settings.actionPosition == 2" scope="col"><a (click)="insertInline()"><i class="fa fa-plus"></i></a></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngIf="editting">
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 1"> 
+                      <a (click)="saveInline(f)"><i class="fa fa-save"></i></a>
+                      <a (click)="cancelInsertInline()"><i class="fa fa-ban"></i></a>
+                  </td>
+                  <td *ngFor="let header of settings.headers">
+                      <input [ngModel]="newData[header.columnName]" 
+                             [readonly] = "header.disabled"
+                             [name]="header.columnName"
+                             class="form-control" 
+                             value=""> 
+                  </td>
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 2"> 
+                      <a (click)="saveInline(f)"><i class="fa fa-save"></i></a>
+                      <a (click)="cancelInsertInline()"><i class="fa fa-ban"></i></a>
+                  </td>
+               </tr>
+               <tr [hidden]="showLine(i)"  *ngFor="let dt of settings.data;let i = index">
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 1"> 
+                      <div *ngIf="!dt.editting">
+                          <a  (click)="editInline(dt);formData = dt"><i class="fa fa-pencil"></i></a>
+                          <a><i (click)="deleteInline(dt)" class="fa fa-times"></i></a>
+                      </div>
+                      <div *ngIf="dt.editting">
+                        <a (click)="saveInline(f,dt)"><i class="fa fa-save"></i></a>
+                        <a (click)="cancelEditInline(dt)"><i class="fa fa-ban"></i></a>
+                      </div>
+                  </td>
+                  <td  [style.textAlign]="header.align" *ngFor="let header of settings.headers">
+                      <span *ngIf="!dt.editting">{{ dt[header.columnName]}} </span>
+                      <input *ngIf="dt.editting"
+                              [ngModel]="dt[header.columnName]" 
+                              [readonly] = "header.disabled"
+                              class="form-control"
+                              [name]="header.columnName"> 
+                  </td>
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 2"> 
+                      <div *ngIf="!dt.editting">
+                          <a  (click)="editInline(dt);formData = dt"><i class="fa fa-pencil"></i></a>
+                          <a><i (click)="deleteInline(dt)" class="fa fa-times"></i></a>
+                      </div>
+                      <div *ngIf="dt.editting">
+                        <a (click)="saveInline(f,dt);"><i class="fa fa-save"></i></a>
+                        <a (click)="cancelEditInline(dt)"><i class="fa fa-ban"></i></a>
+                      </div>
+                  </td>
+               </tr>
+          </tbody>
+        </table>
+      </form>
+      <app-pagination 
+         [settings]="pageSettings" 
+         (pageChange) = "changePage($event)"
+         *ngIf="settings.pagination">
+      </app-pagination> 
+      

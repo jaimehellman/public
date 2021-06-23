@@ -1,0 +1,24 @@
+
+.login-center{
+    width: 40%;
+    max-width: 40%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); /* for IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* for Safari */
+    border: 1px solid #AAAAAA;
+    padding:15px;
+}
+.login-center h1{
+    color: #3E879F;
+}
+
+.btn-primary-green{
+    background: #3E879F;
+    color:#fff;
+}
+
+
+

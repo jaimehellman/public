@@ -1,0 +1,24 @@
+<div class="dropdown">
+    <input type="text" class="form-control combo-text" value="" (keyup)="toggle($event)">
+    <input type="hidden" 
+        class="combo-value" 
+        [id]="id" 
+        [name]="name" 
+        [value]="value?value:''" >
+    <span (click)="toggle($event)"  class="text-addon"></span>
+    <div (mouseleave)="out($event)" class="dropdown-content">
+        <table class="datagrid" >
+            <tr>
+                <th *ngIf="checkbox"  style="text-align:center" width="56"><input (change)="checkAll($event)"  type="checkbox" class="checlAll"></th>
+                <th [style.textAlign]="header.align" *ngFor="let header of headers" scope="col">{{header.columnTitle}}</th>
+            </tr>
+            <tr  *ngFor="let dt of data" (click)="rowClick($event)" [attr.value]="dt[key]"  [attr.text]="dt[text]"  class="datagrid-row">
+                <td style="text-align:center" *ngIf="checkbox"><input type="checkbox" (change)="setValue($event)" class="rowCheck"></td>
+                <td  [style.textAlign]="header.align" *ngFor="let header of headers">
+                        {{ dt[header.columnName]}}
+                </td>
+            </tr>
+		
+        </table>
+   </div>
+</div>

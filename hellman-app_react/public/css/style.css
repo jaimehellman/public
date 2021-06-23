@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    float:left;
+    width:100%;
+}
+  
+fieldset.fieldset {
+    border: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0 7px 7px 7px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 98%;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+  
+fieldset.fieldset legend {
+    font: normal 12px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666666;
+    display: block;
+}
+ 
+.atext{
+	font-size: 0.94rem;
+}
+
+.hidden { display:none; }

@@ -1,0 +1,12 @@
+  <nav aria-label="PageGridview">
+    <ul class="pagination">
+      <li [ngClass]="disabledPage(page,'P')" class="page-item">
+        <a (click)="onPrevious(page)" class="page-link">Previous</a>
+      </li>
+      <li  [ngClass]="activePage(p.value)"  [hidden]="!p.visible" *ngFor="let p of pages" class="page-item">
+          <a (click)="onPage(p.value);" class="page-link">{{p.value}}</a>
+      </li>
+      <li [ngClass]="disabledPage(page,'N')"  class="page-item">
+        <a  (click)="onNext(page)" class="page-link">Next</a></li>
+    </ul>
+  </nav>

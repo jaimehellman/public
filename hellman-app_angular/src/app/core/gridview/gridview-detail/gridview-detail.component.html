@@ -1,0 +1,67 @@
+  
+<form #f="ngForm" >
+        <table class="table">
+          <thead>
+            <tr>
+                <th class="ctr actions" *ngIf="settings.actionPosition == 1" scope="col">
+                    <a href="{{action.url}}" *ngFor="let action of headerActions">
+                        <i *ngIf="action.icon" class="fa fa-{{action.icon}}"></i>
+                        <span *ngIf="!action.icon">{{action.text}}</span>
+                    </a>
+                </th>
+                <th [style.textAlign]="header.align" *ngFor="let header of settings.headers" scope="col">{{header.columnTitle}}</th>
+                <th class="ctr actions" *ngIf="settings.actionPosition == 2" scope="col">
+                    <a href="{{action.url}}" *ngFor="let action of headerActions">
+                        <i *ngIf="action.icon" class="fa fa-{{action.icon}}"></i>
+                        <span *ngIf="!action.icon">{{action.text}}</span>
+                     </a>
+                </th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngIf="editting">
+                  <td *ngFor="let header of settings.headers">
+                      <input [ngModel]="newData[header.columnName]" 
+                             [disabled] = "header.disabled"
+                             [name]="header.columnName"
+                             class="form-control" 
+                             value=""> 
+                  </td>
+               </tr>
+               <tr [hidden]="showLine(i)"  *ngFor="let dt of settings.data;let i = index">
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 1"> 
+                      <div *ngIf="!dt.editting">
+                        <a href="{{action.url}}" *ngFor="let action of rowActions">
+                            <i *ngIf="action.icon" class="fa fa-{{action.icon}}"></i>
+                            <span *ngIf="!action.icon">{{action.text}}</span>
+                        </a>
+                         <a><i (click)="deleteInline(dt)" class="fa fa-times"></i></a>
+                      </div>
+                  </td>
+                  <td  [style.textAlign]="header.align" *ngFor="let header of settings.headers">
+                      <span *ngIf="!dt.editting">{{ dt[header.columnName]}} </span>
+                      <input *ngIf="dt.editting"
+                              [ngModel]="dt[header.columnName]" 
+                              [disabled] = "header.disabled"
+                              class="form-control"
+                              [name]="header.columnName"> 
+                  </td>
+                  <td class="ctr actions"  *ngIf="settings.actionPosition == 2"> 
+                      <div *ngIf="!dt.editting">
+                          <a href="{{action.url}}" *ngFor="let action of rowActions">
+                             <i *ngIf="action.icon" class="fa fa-{{action.icon}}"></i>
+                             <span *ngIf="!action.icon">{{action.text}}</span>
+                          </a>
+                          <a><i (click)="deleteInline(dt)" class="fa fa-times"></i></a>
+                      </div>
+                  </td>
+               </tr>
+          </tbody>
+        </table>
+      </form>
+      <app-pagination 
+         [settings]="pageSettings" 
+         (pageChange) = "changePage($event)"
+         *ngIf="settings.pagination">
+      </app-pagination> 
+      

@@ -1,0 +1,7 @@
+.alert{
+    min-height: 50px;
+}
+.alert ul{
+    float:left;
+    list-style: none;
+}

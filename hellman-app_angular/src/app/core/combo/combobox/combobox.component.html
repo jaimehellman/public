@@ -1,0 +1,18 @@
+<div class="dropdown">
+    <input type="text" class="form-control combo-text" value="{{text}}" (keyup)="toggle($event)">
+    <input type="hidden" 
+           class="combo-value" 
+           [id]="id" 
+           [name]="name" 
+           [value]="value?value:''" >
+    <span (click)="toggle($event)"  class="text-addon"></span>
+    <div (mouseleave)="out($event)" class="dropdown-content">
+        <ul>
+            <li *ngFor="let item of data">
+                 <input *ngIf="checkbox" (change)="setValue($event)" type="checkbox" [value]="item.value"> 
+                 <a [rel]="item.value" (click)="setValue($event)">{{item.text}}</a>
+            </li>
+
+         </ul>
+    </div>
+</div>

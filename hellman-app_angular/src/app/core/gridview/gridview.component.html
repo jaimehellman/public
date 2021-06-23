@@ -1,0 +1,25 @@
+<app-gridview-inline  
+      *ngIf="this.settings.type == 1"
+      [settings] ="settings"
+      (reload) = "reloadGrid($event)"
+
+   >
+</app-gridview-inline>
+
+<app-gridview-detail  
+      *ngIf="this.settings.type == 2"
+      [settings] ="settings"
+   >
+</app-gridview-detail>
+
+<app-simple-gridview  
+      *ngIf="this.settings.type == 3"
+      [settings] ="settings"
+   >
+</app-simple-gridview>
+
+<app-gridview-in-memory  
+      *ngIf="this.settings.type == 4"
+      [settings] ="settings"
+   >
+</app-gridview-in-memory>

@@ -1,0 +1,28 @@
+<form #f="ngForm" >
+        <table class="table">
+          <thead>
+            <tr>
+                <th [style.textAlign]="header.align" *ngFor="let header of settings.headers" scope="col">{{header.columnTitle}}</th>
+            </tr>
+          </thead>
+          <tbody>
+              
+               <tr [hidden]="showLine(i)"  *ngFor="let dt of settings.data;let i = index">
+                  <td  [style.textAlign]="header.align" *ngFor="let header of settings.headers">
+                      <span *ngIf="!dt.editting">{{ dt[header.columnName]}} </span>
+                      <input *ngIf="dt.editting"
+                              [ngModel]="dt[header.columnName]" 
+                              [disabled] = "header.disabled"
+                              class="form-control"
+                              [name]="header.columnName"> 
+                  </td>
+               </tr>
+          </tbody>
+        </table>
+      </form>
+      <app-pagination 
+         [settings]="pageSettings" 
+         (pageChange) = "changePage($event)"
+         *ngIf="settings.pagination">
+      </app-pagination> 
+      

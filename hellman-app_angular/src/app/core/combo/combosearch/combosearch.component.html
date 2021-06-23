@@ -1,0 +1,16 @@
+<div class="dropdown">
+    <input type="text" class="form-control combo-text" [value]="text" (keyup)="toggle($event)">
+    <input type="hidden" 
+           class="combo-value" 
+           [id]="id" 
+           [name]="name" 
+           [value]="value?value:''" >
+    <span (click)="toggle($event)"  class="text-addon"></span>
+    <div (mouseleave)="out($event)" class="dropdown-content">
+        <input type="text" class="form-control form-search" placeholder="Search.."  (keyup)="filter($event)">
+        <a *ngFor="let item of data" class="search-row" [rel]="item.value" (click)="rowClick($event)" href="javascript:void(0)">
+            <input *ngIf="checkbox" type="checkbox" (change)="setValue($event)" class="rowCheck"> {{item.text}}
+        </a>
+
+     </div>
+</div>

@@ -1,0 +1,40 @@
+.dropdown-content.combobox ul{
+    list-style: none;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    height:200px;
+    overflow-y:scroll;
+}
+
+.dropdown-content.combobox ul li{
+    height: 30px;
+    border-bottom: 1px solid #dfdfdf;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+.dropdown-content.combobox ul li input[type='checkbox'] {
+    position:absolute;
+    margin-top:6px;
+}
+
+.dropdown-content.combobox ul li.selected{
+    background-color: #0092DC;
+    color: #fff;
+}
+
+.dropdown-content.combobox ul li:hover{
+    color: #39c;
+    background: #eee;
+}
+
+.dropdown-content.combobox li a{
+    float:left;
+    width:100%;
+    height:100%;
+    padding-left:20px;
+}
+
+  

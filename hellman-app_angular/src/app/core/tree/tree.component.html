@@ -1,0 +1,23 @@
+<div class="tree">
+    <ul  class="tree-ul">
+        <li *ngFor="let item of rootData" class="tree-row">
+            <a class="tree-node"  [parent]="item.parent"  [rel]="item.value">
+                <span (click)="toggleChildren($event)" class="caret"></span>
+                <input *ngIf="checkbox" type="checkbox" (change)="setValue($event)" class="rowCheck">
+                <span  class="span-text" [rel]="item.value" [value]="item.value" (click)="setValue($event)">{{item.text}}</span>
+            </a>
+            <ul  *ngIf="item.children.length > 0"  class="nested">
+                <Tree 
+                    (change) = "select($event)"
+                    (changeMultiple) = "selectMultiple($event)"
+                    (cleanTree) = "clean($event)"
+                    [checkbox]="checkbox"
+                    [multiple]="multiple"
+                    [nodeValue]="item.value"
+                    [value]="value?value:''"
+                    [data]="data">
+                </Tree>
+            </ul>
+        </li>
+    </ul>
+</div>

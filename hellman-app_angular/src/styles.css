@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    float:left;
+    width:100%;
+}
+
+fieldset.fieldset {
+    border: 1px solid #AAAAAA;
+    margin: 0;
+    padding: 0 7px 7px 7px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 98%;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
+fieldset.fieldset legend {
+    font: normal 12px/20px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666666;
+    display: block;
+}
+.ctr{
+    text-align:center;
+}
+
+.ctr a{
+    color:#333;
+    margin-left:3px;
+    cursor:pointer;
+}
+
+.toast-modal .modal-content
+{
+    max-width: 350px !important;
+}
